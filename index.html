@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <!-- Here I have defined my external assets to use in the code -->
+
+  <script type="text/javascript" src="main.js"></script>
+  <link rel="stylesheet" type="text/css" href="main.css">
+  <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js" integrity="sha384-SlE991lGASHoBfWbelyBPLsUlwY1GwNDJo3jSJO04KZ33K2bwfV9YBauFfnzvynJ" crossorigin="anonymous"></script>
+  <link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
+
+  <!-- Title of HTML Document rendered in the browser's tab -->
+  <title>Jass GPS</title>
+
+  <!-- Internal Styling -->
+
+  <style>
+    #map {
+      height: 440px;
+      width: 800px;
+      background-color: grey;
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="col-1">
+    <div class="navText">
+      <span>What exactly is this?</span> <br> Welcome to my app!! You look like a traveller sir, this is the correct location. You have in front of your eyes a small GPS app made with <i class="far fa-heart 2px"></i> at JASS. <br>
+      <div id="container">
+        <div id="flashlight"><input type="button" id="OFF" class="bigButton" value="OFF" onclick="flip(0);"><input type="button" id="ON" class="bigButton" value="ON" onclick="flip(1);"><input type="button" id="RED" class="bigButton" value="RED" onclick="flip(2);"></div>
+
+
+      </div>
+
+
+
+
+
+    </div>
+  </nav>
+  <div class="col-2">
+    <header>
+      <span id="title">Day Stop&copy;</span> <br>
+      <i class="far fa-compass"></i>
+    </header>
+    <main class="content">
+      <article>
+        <div id="map"></div>
+      </article>
+      <aside>
+        <div class="foodForm">
+          <h3>Where are you planning to go today?</h3>
+          <form>
+            Select an activity for today
+            <select id="icon_use">
+              <option value="movie.png">Movie</option>
+              <option value="bowling.png">Bowling</option>
+              <option value="park.png">Park</option>
+              <option value="roller-skate.png">Roller Skate</option>
+              <option value="ice-skating.png">Skating</option>
+              <option value="swimming.png">Swimming</option>
+              <option value="books.png">Library</option>
+              <option value="museum.png">Museum</option>
+
+            </select>
+          </form>
+          <br>
+          <br>
+
+          <form>
+            Pick a desired time
+            <input id="name" type="text" placeholder="Enter time followed by am or pm" onChange="inputChange(event)" onKeyUp="inputChange(event)" />
+            <button type="submit"><i class="fa fa-chevron-circle-right"></i></button>
+          </form>
+        </div>
+        <div class="todo">
+
+        </div>
+      </aside>
+    </main>
+    <footer>
+      <p>
+        <!-- Rights and author name -->
+        "© 2018 All rights reserved. All Rights Reserved by Jaskaran" <br> "Made with <i class="fa fa-heart pulse"></i> by Jaskaran" <br>
+        <!-- Giving credit to flaticon for providing the icons -->
+        "Icons made by <a href="https://www.flaticon.com/authors/vectors-market" title="Vectors Market">Vectors Market</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/"
+          title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY"</a>
+      </p>
+    </footer>
+  </div>
+
+
+
+
+
+  <!-- This line uses my api key to create the actual Google map returning it to the initMap function at the beginning of the code-->
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDoURNQt1JYCxk7A-nQ-Ktdt9TKFkv6jyQ&callback=initMap&libraries=geometry"></script>
+
+
+
+</body>
+
+</html>
